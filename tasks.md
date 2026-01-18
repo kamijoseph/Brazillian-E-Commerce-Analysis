@@ -1,4 +1,4 @@
-# ✔ Recommended Dataset (Primary)
+# ✔ Brazilian E-Commerce Data Analysis Project
 
 **Olist Brazilian E-Commerce Public Dataset**
 A real, relational, e-commerce dataset with **orders, products, sellers, customers, payments, reviews, and geolocation information**. It’s way better for SQL schema design, joins, grouping, time-series, and deeper analysis than toy datasets. ([Built In][1])
