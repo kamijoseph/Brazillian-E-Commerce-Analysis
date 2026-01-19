@@ -78,6 +78,15 @@ create table order_reviews (
     review_answer_timestamp datetime
 );
 
+-- geolocation tables
+create table geolocation (
+	geolocation_zip_code_prefix INT,
+    geolocation_lat DECIMAL(9,6),
+    geolocation_lng DECIMAL(9,6),
+    geolocation_city VARCHAR(100),
+    geolocation_state CHAR(2)
+)
+
 
 
 
