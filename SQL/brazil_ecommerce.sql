@@ -58,13 +58,24 @@ create table sellers (
 );
 
 -- payments table
-create table payments (
+create table order_payments (
 	order_id varchar(50),
     payment_sequential int,
     payment_type varchar (30),
     payment_installments int,
     payment_value decimal(10, 2),
     primary key (order_id, payment_sequential)
+);
+
+-- reviews table
+create table order_reviews (
+	review_id varchar(50) primary key,
+    order_id varchar(50),
+    review_score int,
+    review_comment_title text,
+    review_comment_message text,
+    review_creation_date datetime,
+    review_answer_timestamp datetime
 );
 
 
