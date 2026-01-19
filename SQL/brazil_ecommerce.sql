@@ -12,6 +12,17 @@ create table customers (
     customer_city varchar(100),
     customer_state char(2)
 );
+-- populating customers table
+load data infile '/var/lib/mysql-files/customers.csv'
+into table customers
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(customer_id, customer_unique_id, customer_zip_code_prefix, customer_city, customer_state);
+
+select *
+from customers;
 
 -- orders table
 create table orders (
@@ -106,6 +117,14 @@ create table geolocation (
     geolocation_city VARCHAR(100),
     geolocation_state CHAR(2)
 );
+-- populating geolocation data
+load data infile '/var/lib/mysql-files/geolocation.csv'
+into table geolocation
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state);
 
 
 
