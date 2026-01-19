@@ -49,6 +49,14 @@ create table products (
     product_width_cm int
 );
 
+-- sellers table
+create table sellers (
+	seller_id varchar(50) primary key,
+    sellers_zip_code_prefix int,
+    seller_city varchar(100),
+    seller_state char(2)
+);
+
 
 
 
