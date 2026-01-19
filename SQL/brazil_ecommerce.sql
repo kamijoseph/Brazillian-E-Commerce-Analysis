@@ -24,7 +24,7 @@ create table orders (
     foreign key (customer_id) references customers(customer_id)
 );
 
--- order items
+-- order items table
 create table order_items (
 	order_id varchar(50),
     order_item_id int,
@@ -34,6 +34,19 @@ create table order_items (
     price decimal(10, 2),
     freight_value decimal(10, 2),
     primary key (order_id, order_item_id)
+);
+
+-- products table
+create table products (
+	product_id varchar(50) primary key,
+    product_category_name varchar(100),
+    product_name_length int,
+    product_description_length int,
+    product_photos_qty int,
+    product_weight_g int,
+    product_length_cm int,
+    product_height_cm int,
+    product_width_cm int
 );
 
 
