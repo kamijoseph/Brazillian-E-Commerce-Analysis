@@ -1,6 +1,8 @@
 create database olist;
 use olist;
-
+SET GLOBAL local_infile = 1;
+show variables like "secure_file_priv";
+SET foreign_key_checks = 0;
 
 -- customers table
 create table customers (
@@ -78,6 +80,24 @@ create table order_reviews (
     review_answer_timestamp datetime
 );
 
+-- product category table
+create table product_category (
+    product_category_name VARCHAR(100) NOT NULL PRIMARY KEY,
+    product_category_name_english VARCHAR(100) NOT NULL
+);
+
+-- populating product_category
+LOAD DATA INFILE '/var/lib/mysql-files/product_category.csv'
+INTO TABLE product_category
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+select *
+from product_category;
+
+
 -- geolocation tables
 create table geolocation (
 	geolocation_zip_code_prefix INT,
@@ -85,7 +105,7 @@ create table geolocation (
     geolocation_lng DECIMAL(9,6),
     geolocation_city VARCHAR(100),
     geolocation_state CHAR(2)
-)
+);
 
 
 
