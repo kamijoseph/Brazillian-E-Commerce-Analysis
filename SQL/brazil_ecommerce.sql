@@ -180,7 +180,7 @@ ignore 1 rows
 show variables like 'local_infile';
 
 select *
-from order_payments;
+from sellers;
 
 
 
