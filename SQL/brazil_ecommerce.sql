@@ -36,6 +36,15 @@ create table orders (
     order_estimated_delivery_date datetime,
     foreign key (customer_id) references customers(customer_id)
 );
+-- populating orders table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/orders.csv'
+into table orders
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(order_id, customer_id, order_status, order_purchase_timestamp, order_approved_at, order_delivered_carrier_date, order_delivered_customer_date, order_estimated_delivery_date);
+
 
 -- order items table
 create table order_items (
@@ -48,6 +57,15 @@ create table order_items (
     freight_value decimal(10, 2),
     primary key (order_id, order_item_id)
 );
+-- populating order items table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/order_items.csv'
+into table order_items
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(order_id, order_item_id, product_id, seller_id, shipping_limit_date, price, freight_value);
+
 
 -- products table
 create table products (
@@ -61,6 +79,14 @@ create table products (
     product_height_cm int,
     product_width_cm int
 );
+-- populating prducts table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/products.csv'
+into table products
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(product_id, product_category_name, product_name_length, product_description_length, product_photos_qty, product_weight_g, product_length_cm, product_height_cm, product_width_cm);
 
 -- sellers table
 create table sellers (
@@ -69,6 +95,14 @@ create table sellers (
     seller_city varchar(100),
     seller_state char(2)
 );
+-- populating sellers table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/sellers.csv'
+into table sellers
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(seller_id, sellers_zip_code_prefix, seller_city, seller_state);
 
 -- payments table
 create table order_payments (
@@ -79,6 +113,14 @@ create table order_payments (
     payment_value decimal(10, 2),
     primary key (order_id, payment_sequential)
 );
+-- populating order payments table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/order_payments.csv'
+into table order_payments
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(order_id, payment_sequential, payment_type, payment_installments, payment_value);
 
 -- reviews table
 create table order_reviews (
@@ -90,6 +132,15 @@ create table order_reviews (
     review_creation_date datetime,
     review_answer_timestamp datetime
 );
+-- populating order_reviews table
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/order_reviews.csv'
+into table order_reviews
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\n'
+ignore 1 rows
+(review_id, order_id, review_score, review_comment_title, review_comment_message, review_creation_date, review_answer_timestamp);
+
 
 -- product category table
 create table product_category (
@@ -118,7 +169,7 @@ create table geolocation (
     geolocation_state CHAR(2)
 );
 -- populating geolocation data
-load data infile '/var/lib/mysql-files/geolocation.csv'
+load data local infile '/home/kami/Projects/Olist Brazilian E-Commerce/data/geolocation.csv'
 into table geolocation
 fields terminated by ','
 enclosed by '"'
@@ -126,6 +177,10 @@ lines terminated by '\n'
 ignore 1 rows
 (geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state);
 
+show variables like 'local_infile';
+
+select *
+from order_payments;
 
 
 
