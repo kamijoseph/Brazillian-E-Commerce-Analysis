@@ -1,2 +1,2 @@
-create database global_energy;
-use global_energy;
+create database olist;
+use olist;
