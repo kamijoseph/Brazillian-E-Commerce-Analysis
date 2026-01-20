@@ -57,7 +57,13 @@
 very low at 3.12%
 
 ### 6. Distribution of orders by day of the week.
-
+'Monday', '16196'
+'Tuesday', '15963'
+'Wednesday', '15552'
+'Thursday', '14761'
+'Friday', '14122'
+'Sunday', '11960'
+'Saturday', '10887'
 
 
 7. Median order value by month.

@@ -241,8 +241,16 @@ select
     ) as repeat_customer_percentage
 from customer_orders;
 
+-- 6. distributions of orders by day of the week
+select
+	dayname(order_purchase_timestamp) as weekday,
+    count(*) as total_orders
+from orders
+group by weekday
+order by total_orders desc;
+
 select *
-from order_payments
+from orders
 ;
 
 
