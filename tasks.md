@@ -37,11 +37,13 @@
 
 
 ### 3. Average number of orders per customer.
+1.03
+
+
+### 4. Top 10 customers by total spending.
 
 
 
-
-4. Top 10 customers by total spending.
 5. Percentage of customers who made repeat purchases.
 6. Distribution of orders by day of the week.
 7. Median order value by month.

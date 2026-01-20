@@ -202,9 +202,19 @@ where order_purchase_timestamp >= date_sub(
 group by yearmonth
 order by yearmonth;
 
+-- 3. average number of orders per customer
+select 
+	round(count(o.order_id) / count(distinct c.customer_unique_id), 2)
+    as avg_orders_per_customer
+from orders o
+join customers c
+	on o.customer_id = c.customer_id
+;
+
+
 
 select *
-from customers
+from orders
 ;
 
 
