@@ -285,6 +285,7 @@ group by order_id
 order by total_items desc
 limit 10;
 
+-- orders with zero or negative shipping delay
 
 
 select *

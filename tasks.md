@@ -109,7 +109,24 @@ very low at 3.12%
 
 
 ### 9. Orders with zero or negative shipping delay.
+they are so many to paste here, run the mysql command to find out
 
+```SQL
+select
+	order_id,
+    datediff(
+		order_delivered_customer_date,
+        order_estimated_delivery_date
+    ) as delivery_delay_dates
+from orders
+where
+	order_delivered_customer_date is not null
+    and order_estimated_delivery_date is not null
+    and datediff(
+		order_delivered_customer_date,
+        order_estimated_delivery_date
+    ) <= 0;
+```
 
 
 10. Breakdown of customers by state (using geolocation).
