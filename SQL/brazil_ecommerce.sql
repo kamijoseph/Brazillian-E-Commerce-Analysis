@@ -276,10 +276,19 @@ where rn in (floor((cnt + 1) / 2), floor((cnt + 2) / 2))
 group by yearmonth
 order by yearmonth;
 
+-- orders with the highest number of items
+select
+	order_id,
+    count(*) as total_items
+from order_items
+group by order_id
+order by total_items desc
+limit 10;
+
 
 
 select *
-from order_payments
+from order_items
 ;
 
 

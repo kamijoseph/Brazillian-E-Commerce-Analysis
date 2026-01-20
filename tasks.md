@@ -95,8 +95,23 @@ very low at 3.12%
 
 
 
-8. Orders with the highest number of items.
-9. Orders with zero or negative shipping delay.
+### 8. Orders with the highest number of items.
+'8272b63d03f5f79c56e9e4120aec44ef', '21'
+'ab14fdcfbe524636d65ee38360e22ce8', '20'
+'1b15974a0141d54e36626dca3fdc731a', '20'
+'9ef13efd6949e4573a18964dd1bbe7f5', '15'
+'428a2f660dc84138d969ccd69a0ab6d5', '15'
+'9bdc4d4c71aa1de4606060929dee888c', '14'
+'73c8ab38f07dc94389065f7eba4f297a', '14'
+'37ee401157a3a0b28c9c6d0ed8c3b24b', '13'
+'2c2a19b5703863c908512d135aa6accc', '12'
+'3a213fcdfe7d98be74ea0dc05a8b31ae', '12'
+
+
+### 9. Orders with zero or negative shipping delay.
+
+
+
 10. Breakdown of customers by state (using geolocation).
 
 ### **Product & Sales Analytics**
