@@ -211,10 +211,20 @@ join customers c
 	on o.customer_id = c.customer_id
 ;
 
+-- 4 top 10 customers by total spending
+select
+	c.customer_unique_id,
+    sum(p.payment_value) as total_spent
+from customers c
+join orders o
+	on c.customer_id = o.customer_id
+join order_payments p
+	on o.order_id = p.order_id
+
 
 
 select *
-from orders
+from order_payments
 ;
 
 
