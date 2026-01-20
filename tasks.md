@@ -53,9 +53,13 @@
 'eebb5dda148d3893cdaf5b5ca3040ccb', '4764.34'
 
 
+### 5. Percentage of customers who made repeat purchases.
+very low at 3.12%
 
-5. Percentage of customers who made repeat purchases.
-6. Distribution of orders by day of the week.
+### 6. Distribution of orders by day of the week.
+
+
+
 7. Median order value by month.
 8. Orders with the highest number of items.
 9. Orders with zero or negative shipping delay.

@@ -220,8 +220,26 @@ join orders o
 	on c.customer_id = o.customer_id
 join order_payments p
 	on o.order_id = p.order_id
+group by c.customer_unique_id
+order by total_spent desc
+limit 10;
 
-
+-- 5. percentage of customers who made repeat purchase
+with customer_orders as (
+	select
+		c.customer_unique_id,
+        count(o.order_id) as order_count
+	from customers c
+    join orders o
+		on c.customer_id = o.customer_id
+	group by c.customer_unique_id
+)
+select
+	round(
+		100 * sum(order_count > 1) / count(*),
+        2
+    ) as repeat_customer_percentage
+from customer_orders;
 
 select *
 from order_payments
