@@ -249,8 +249,37 @@ from orders
 group by weekday
 order by total_orders desc;
 
+-- 7. median order value by month: no median so we use window function
+with order_values as (
+	select
+		o.order_id,
+        date_format(o.order_purchase_timestamp, '%Y-%m') as yearmonth,
+        sum(p.payment_value) as order_value
+	from orders o
+    join order_payments p
+		on o.order_id = p.order_id
+	group by o.order_id, yearmonth
+),
+ranked as (
+	select
+		yearmonth,
+        order_value,
+        row_number() over (partition by yearmonth order by order_value) as rn,
+        count(*) over (partition by yearmonth) as cnt
+	from order_values
+)
+select
+	yearmonth,
+    avg(order_value) as median_order_value
+from ranked
+where rn in (floor((cnt + 1) / 2), floor((cnt + 2) / 2))
+group by yearmonth
+order by yearmonth;
+
+
+
 select *
-from orders
+from order_payments
 ;
 
 
