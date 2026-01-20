@@ -190,11 +190,19 @@ join customers c
 group by year
 order by year desc;
 
--- '2018', '52749'
--- '2017', '43713'
--- '2016', '326'
+-- 2. total orders per month for the last 3 years
+select
+	date_format(order_purchase_timestamp, "%Y-%m") as yearmonth,
+    count(*) as total_orders
+from orders
+where order_purchase_timestamp >= date_sub(
+	(select max(order_purchase_timestamp) from orders),
+    interval 3 year
+)
+group by yearmonth
+order by yearmonth;
 
-    
+
 select *
 from customers
 ;
