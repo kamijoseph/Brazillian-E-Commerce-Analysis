@@ -276,7 +276,7 @@ where rn in (floor((cnt + 1) / 2), floor((cnt + 2) / 2))
 group by yearmonth
 order by yearmonth;
 
--- orders with the highest number of items
+-- 8. orders with the highest number of items
 select
 	order_id,
     count(*) as total_items
@@ -285,11 +285,27 @@ group by order_id
 order by total_items desc
 limit 10;
 
--- orders with zero or negative shipping delay
+-- 9. orders with zero or negative shipping delay
+select
+	order_id,
+    datediff(
+		order_delivered_customer_date,
+        order_estimated_delivery_date
+    ) as delivery_delay_dates
+from orders
+where
+	order_delivered_customer_date is not null
+    and order_estimated_delivery_date is not null
+    and datediff(
+		order_delivered_customer_date,
+        order_estimated_delivery_date
+    ) <= 0;
+    
+-- 10.
 
 
 select *
-from order_items
+from customers
 ;
 
 
