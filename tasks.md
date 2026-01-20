@@ -1,25 +1,13 @@
-# ✔ Brazilian E-Commerce Data Analysis Project
+# Tasks and Solutions
 
-**Olist Brazilian E-Commerce Public Dataset**
-A real, relational, e-commerce dataset with **orders, products, sellers, customers, payments, reviews, and geolocation information**. It’s way better for SQL schema design, joins, grouping, time-series, and deeper analysis than toy datasets. ([Built In][1])
-
-🔗 **Download Link (Kaggle):**
-[https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
-
-**What makes this great:**
-
-* Multiple tables (orders, order_items, payments, customers, products, sellers, reviews, geolocation)
-* Good size (~100,000+ orders, many linked CSVs)
-* Real operational data (not synthetic)
-* Perfect for database normalization and SQL querying
-* Fits dashboarding questions around customer behavior, sales, performance, and geography
-* Profile-worthy project — very few people build SQL + dashboard projects with this dataset ([Built In][1])
-
----
-
-### **Customer & Order Behavior**
+## **Customer & Order Behavior**
 
 1. Total number of unique customers by year.
+- '2018', '52749'
+- '2017', '43713'
+- '2016', '326'
+
+
 2. Total orders per month for the last three years.
 3. Average number of orders per customer.
 4. Top 10 customers by total spending.

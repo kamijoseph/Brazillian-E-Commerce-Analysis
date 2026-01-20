@@ -178,9 +178,27 @@ ignore 1 rows
 (geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state);
 
 show variables like 'local_infile';
+set global local_infile = 1;
 
+-- 1. total number of unique customers by year
+select
+	year(o.order_purchase_timestamp) as year,
+    count(distinct c.customer_unique_id) as unique_customers
+from orders o
+join customers c
+	on o.customer_id = c.customer_id
+group by year
+order by year desc;
+
+-- '2018', '52749'
+-- '2017', '43713'
+-- '2016', '326'
+
+    
 select *
-from sellers;
+from customers
+;
+
 
 
 
