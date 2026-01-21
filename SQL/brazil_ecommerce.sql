@@ -355,6 +355,19 @@ from category_sales c
 cross join total_sales t
 order by pct_total_sales;
 
+-- 14. sales trend per category over time
+select
+	date_format(o.order_purchase_timestamp, "%Y-%m") as yearmonth,
+    p.product_category_name,
+    sum(oi.price + oi.freight_value) as monthly_sales
+from order_items oi
+join orders o
+	on oi.order_id = o.order_id
+join products p
+	on oi.product_id = p.product_id
+group by yearmonth, p.product_category_name
+order by yearmonth, monthly_sales desc;
+
 
 select *
 from product_category

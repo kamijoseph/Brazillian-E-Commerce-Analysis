@@ -169,7 +169,10 @@ output too long, run the query yourself pal
 output too long, run the query yourself pal
 
 
-15. Sales trend per category over time.
+### 15. Sales trend per category over time.
+
+
+
 16. Products with a high return rate (if dataset includes return flags).
 17. Correlation between price and quantity sold.
 18. SKUs with extreme seasonality in sales.
