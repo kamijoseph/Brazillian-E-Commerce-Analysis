@@ -400,6 +400,13 @@ group by product_id
 order by seasonality_index desc
 limit 10;
 
+-- 17. products without any sales
+select
+	p.product_id,
+    p.product_category_name
+from products p
+left join order_items oi on p.product_id = oi.product_id
+where oi.order_id is null;
 
 select *
 from product_category

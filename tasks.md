@@ -204,6 +204,9 @@ check query and pandas
 
 
 19. Products without any sales (inventory inefficiencies).
+None
+
+
 20. Sales spikes during specific holidays or events.
 
 ### **Payments & Revenue**
