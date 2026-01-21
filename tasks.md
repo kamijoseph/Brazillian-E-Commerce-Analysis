@@ -149,8 +149,20 @@ impasse
 '53b36df67ebb7c41585e8d54d6772e08', '39957.93'
 
 
-12. Top 20 product categories by number of orders.
-13. Average price per category.
+### 12. Top 10 product categories by number of orders.
+'cama_mesa_banho', '9417'
+'beleza_saude', '8836'
+'esporte_lazer', '7720'
+'informatica_acessorios', '6689'
+'moveis_decoracao', '6449'
+'utilidades_domesticas', '5884'
+'relogios_presentes', '5624'
+'telefonia', '4199'
+'automotivo', '3897'
+'brinquedos', '3886'
+
+
+### 13. Average price per category.
 14. Percentage of total sales contributed by each category.
 15. Sales trend per category over time.
 16. Products with a high return rate (if dataset includes return flags).
