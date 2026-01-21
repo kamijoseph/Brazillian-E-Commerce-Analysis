@@ -323,6 +323,16 @@ group by p.product_category_name
 order by num_orders desc
 limit 10;
 
+-- 12. average price per category
+select
+p.product_category_name,
+    round(avg(oi.price), 2) as avg_price
+from order_items oi
+join products p
+	on oi.product_id = p.product_id
+group by p.product_category_name
+order by avg_price desc;
+
 
 select *
 from product_category

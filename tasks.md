@@ -163,7 +163,11 @@ impasse
 
 
 ### 13. Average price per category.
-14. Percentage of total sales contributed by each category.
+output too long, run the query yourself pal
+
+### 14. Percentage of total sales contributed by each category.
+
+
 15. Sales trend per category over time.
 16. Products with a high return rate (if dataset includes return flags).
 17. Correlation between price and quantity sold.
