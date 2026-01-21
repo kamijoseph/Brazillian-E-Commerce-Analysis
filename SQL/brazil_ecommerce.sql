@@ -380,6 +380,26 @@ GROUP BY oi.product_id
 ORDER BY return_rate_pct DESC
 LIMIT 10;
 
+-- 16. SKUs with extreme seasonality in sales
+with monthly_sales as (
+	select
+		oi.product_id,
+        date_format(o.order_purchase_timestamp, "%Y-%m") as month,
+        sum(oi.price + oi.freight_value) as sales
+	from order_items oi
+    join orders o on oi.order_id = o.order_id
+    group by oi.product_id, month
+)
+select
+	product_id,
+    max(sales) as max_monthly_sales,
+    min(sales) as min_monthly_sales,
+    (max(sales) - min(sales)) / nullif(max(sales), 0) as seasonality_index
+from monthly_sales
+group by product_id
+order by seasonality_index desc
+limit 10;
+
 
 select *
 from product_category

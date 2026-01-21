@@ -186,8 +186,23 @@ output too long, run the query yourself pal
 '05fa60020215fd65f8f8b9dd441f864b', '1', '1', '100.00'
 
 
-17. Correlation between price and quantity sold.
-18. SKUs with extreme seasonality in sales.
+### 17. Correlation between price and quantity sold.
+check query and pandas
+
+
+### 18. SKUs with extreme seasonality in sales.
+'53b36df67ebb7c41585e8d54d6772e08', '11831.08', '125.44', '0.989397'
+'54d9ac713e253fa1fae9c8003b011c2a', '3498.48', '41.23', '0.988215'
+'422879e10f46682990de24d770e7f83d', '6322.84', '77.57', '0.987732'
+'42a2c92a0979a949ca4ea89ec5c7b934', '5660.69', '90.89', '0.983944'
+'f1c7f353075ce59d8a6f3cf58f419c9c', '13404.56', '223.76', '0.983307'
+'e53e557d5a159f5aa2c5e995dfdf244b', '6613.85', '125.42', '0.981037'
+'2948658cb6abc82847412be7201bfc4c', '7267.74', '141.68', '0.980506'
+'7e0dc102074f8285580c9777f79c90cf', '2221.63', '43.62', '0.980366'
+'aca2eb7d00ea1a7b8ebd4e68314663af', '10692.90', '223.66', '0.979083'
+'5411e9269501a870cabf632f05655131', '5397.32', '116.43', '0.978428'
+
+
 19. Products without any sales (inventory inefficiencies).
 20. Sales spikes during specific holidays or events.
 
