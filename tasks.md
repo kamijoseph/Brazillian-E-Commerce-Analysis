@@ -170,10 +170,22 @@ output too long, run the query yourself pal
 
 
 ### 15. Sales trend per category over time.
+output too long, run the query yourself pal
 
 
+### 16. Products with a high return rate (if dataset includes return flags).
+'03b10f5e3ef07cfc27a025adca3fd0be', '1', '1', '100.00'
+'0418d6ca9336c4a7ef9667aac0be1976', '1', '1', '100.00'
+'07883aa96515a898e1b9ddf0537a1b56', '1', '1', '100.00'
+'059fd0cc43081303f7c0d7770ab53d52', '1', '1', '100.00'
+'05f97ad4ce078ed1de8882e1824eb07f', '1', '1', '100.00'
+'0350ac874c8937571b129554110ec3b6', '1', '1', '100.00'
+'0915ff4c13dc62982f2a0a3ae788945c', '1', '1', '100.00'
+'03dc797f6faaa324fb633c518ff3f326', '1', '1', '100.00'
+'01886ce599b5837b3e1966cdafacd080', '1', '1', '100.00'
+'05fa60020215fd65f8f8b9dd441f864b', '1', '1', '100.00'
 
-16. Products with a high return rate (if dataset includes return flags).
+
 17. Correlation between price and quantity sold.
 18. SKUs with extreme seasonality in sales.
 19. Products without any sales (inventory inefficiencies).

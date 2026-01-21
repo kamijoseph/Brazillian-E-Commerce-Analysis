@@ -368,6 +368,18 @@ join products p
 group by yearmonth, p.product_category_name
 order by yearmonth, monthly_sales desc;
 
+-- 15. products with a high return rate (if dataset includes return flags)
+SELECT
+    oi.product_id,
+    COUNT(*) AS total_orders,
+    SUM(CASE WHEN o.order_status = 'canceled' THEN 1 ELSE 0 END) AS returns,
+    ROUND(100 * SUM(CASE WHEN o.order_status = 'canceled' THEN 1 ELSE 0 END)/COUNT(*), 2) AS return_rate_pct
+FROM order_items oi
+JOIN orders o ON oi.order_id = o.order_id
+GROUP BY oi.product_id
+ORDER BY return_rate_pct DESC
+LIMIT 10;
+
 
 select *
 from product_category
