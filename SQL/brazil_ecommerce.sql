@@ -333,6 +333,28 @@ join products p
 group by p.product_category_name
 order by avg_price desc;
 
+-- 13. percentage of total sales contributed by each category
+with category_sales as (
+	select
+		p.product_category_name,
+        sum(oi.price + oi.freight_value) as category_total
+	from order_items oi
+    join products p
+		on oi.product_id = p.product_id
+        group by p.product_category_name
+),
+total_sales as (
+	select
+		sum(category_total) as grand_total from category_sales
+)
+select
+	c.product_category_name,
+    c.category_total,
+    round(100 * c.category_total / t.grand_total, 2) as pct_total_sales
+from category_sales c
+cross join total_sales t
+order by pct_total_sales;
+
 
 select *
 from product_category

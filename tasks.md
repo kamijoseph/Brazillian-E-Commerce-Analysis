@@ -166,6 +166,7 @@ impasse
 output too long, run the query yourself pal
 
 ### 14. Percentage of total sales contributed by each category.
+output too long, run the query yourself pal
 
 
 15. Sales trend per category over time.
