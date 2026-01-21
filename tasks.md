@@ -207,8 +207,6 @@ check query and pandas
 None
 
 
-20. Sales spikes during specific holidays or events.
-
 ### **Payments & Revenue**
 
 21. Payment type breakdown (credit_card, boleto, etc.).
