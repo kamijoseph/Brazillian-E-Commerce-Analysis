@@ -301,7 +301,16 @@ where
         order_estimated_delivery_date
     ) <= 0;
     
--- 10.
+-- 10. top 20 products by total sales value
+select
+	p.product_id,
+    sum(oi.price + oi.freight_value) as total_sales
+from order_items oi
+join products p
+	on oi.product_id = p.product_id
+group by p.product_id
+order by total_sales desc
+limit 20;
 
 
 select *

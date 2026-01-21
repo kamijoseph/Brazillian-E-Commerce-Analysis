@@ -134,9 +134,21 @@ impasse
 
 
 
-### **Product & Sales Analytics**
+## **Product & Sales Analytics**
 
-11. Top 20 products by total sales value.
+### 11. Top 10 products by total sales value.
+'bb50f2e236e5eea0100680137654686c', '67606.10'
+'d1c427060a0f73f6b889a5c7c61f2ac4', '60976.03'
+'6cdd53843498f92890544667809f1595', '59093.99'
+'99a4788cb24856965c36a24e339b6058', '51071.60'
+'d6160fb7873f184099d9bc95e30376af', '50326.18'
+'3dd2a17168ec895c781a9191c1e95ad7', '48212.22'
+'aca2eb7d00ea1a7b8ebd4e68314663af', '44820.76'
+'5f504b3a1c75b73d6151be81eb05bdc9', '41725.81'
+'25c38557cf793876c5abdd5931f922db', '40311.95'
+'53b36df67ebb7c41585e8d54d6772e08', '39957.93'
+
+
 12. Top 20 product categories by number of orders.
 13. Average price per category.
 14. Percentage of total sales contributed by each category.
